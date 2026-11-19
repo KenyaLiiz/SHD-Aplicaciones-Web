@@ -50,7 +50,7 @@ export class LoginComponent {
     this.postService.login({ username: this.username, password: this.password }).subscribe({
       next: (response) => {
         localStorage.setItem('token', response.token);
-        this.router.navigate(['/posts']);
+        void this.router.navigate(['/posts']);
       },
       error: (err) => {
         console.error(err);

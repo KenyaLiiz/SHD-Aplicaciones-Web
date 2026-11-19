@@ -1,21 +1,16 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Post } from './post';
+import { TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { PostService } from './post';
 
-describe('Post', () => {
-  let component: Post;
-  let fixture: ComponentFixture<Post>;
+describe('PostService', () => {
+  let service: PostService;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [Post],
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(Post);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
+  beforeEach(() => {
+    TestBed.configureTestingModule({ providers: [PostService, provideHttpClient()] });
+    service = TestBed.inject(PostService);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(service).toBeTruthy();
   });
 });

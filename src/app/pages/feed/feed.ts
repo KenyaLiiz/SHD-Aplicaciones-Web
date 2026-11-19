@@ -115,6 +115,6 @@ export class FeedComponent implements OnInit {
 
   cerrarSesion() {
     localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+    void this.router.navigate(['/login']);
   }
 }
